@@ -3,7 +3,7 @@
 
     app.controller('StoreController', [ '$http', function($http){
         var store = this;
-        $http.get('/store-products.json').success(function(data){
+        $http.get('store-products.json').success(function(data){
             store.products = data;
         });
     }]);
