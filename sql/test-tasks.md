@@ -1,3 +1,8 @@
+#### Сайты с задачами
+
+1. [msql](https://proglib.io/p/sql-questions)
+2. [задачи + теория](https://dou.ua/lenta/articles/sql-questions/)
+
 ### Задача 1. Гребаные кошки
 
 #### Вводные
