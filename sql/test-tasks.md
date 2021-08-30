@@ -140,3 +140,19 @@ select distinct t1.maker, avg(t2.screen) from product as t1 left join laptop as 
 ```
 select maker, count(distinct model) from product where type = 'PC' group by maker having count(distinct model) > 2
 ```
+
+###### Задача 21
+
+Найдите максимальную цену ПК, выпускаемых каждым производителем, у которого есть модели в таблице PC.
+Вывести: maker, максимальная цена.
+
+```
+select distinct t1.maker, max(t2.price) from product as t1 join pc as t2 on t1.model = t2.model group by t1.maker
+```
+
+###### Задача 22
+Для каждого значения скорости ПК, превышающего 600 МГц, определите среднюю цену ПК с такой же скоростью. Вывести: speed, средняя цена.
+
+```
+Select speed, avg(price) from pc group by speed having speed > 600
+```
