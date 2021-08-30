@@ -2,6 +2,7 @@
 
 1. [msql](https://proglib.io/p/sql-questions)
 2. [задачи + теория](https://dou.ua/lenta/articles/sql-questions/)
+3. [презентация sql](https://ppt-online.org/146233)
 
 ### Задача 1. Гребаные кошки
 
@@ -113,4 +114,29 @@ Printer(code, model, color, type, price)
 select t1.maker from product as t1 join pc as t2 on t1.model = t2.model WHERE t2.price = (SELECT MAX(price) FROM pc) GROUP BY t1.maker
 INTERSECT
 select t1.maker from product as t1 join pc as t2 on t1.model = t2.model WHERE t2.price = (SELECT MIN(price) FROM pc) GROUP BY t1.maker
+```
+
+###### Задача 18
+
+Найдите производителей самых дешевых цветных принтеров. Вывести: maker, price
+
+```
+select t1.maker, min(t2.price) from product as t1 left join printer as t2 on t1.model = t2.model where t2.color = 'y' and t2.price=(SELECT min(price) from printer where color = 'y') group by t1.maker
+```
+
+###### Задача 19
+Для каждого производителя, имеющего модели в таблице Laptop, найдите средний размер экрана выпускаемых им ПК-блокнотов.
+Вывести: maker, средний размер экрана.
+
+```
+select distinct t1.maker, avg(t2.screen) from product as t1 left join laptop as t2 on t1.model = t2.model where t2.screen is not null group by t1.maker
+```
+
+###### Задача 20
+
+Задание: 20 (Serge I: 2003-02-13)
+Найдите производителей, выпускающих по меньшей мере три различных модели ПК. Вывести: Maker, число моделей ПК.
+
+```
+select maker, count(distinct model) from product where type = 'PC' group by maker having count(distinct model) > 2
 ```
