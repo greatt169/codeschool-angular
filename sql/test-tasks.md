@@ -3,6 +3,8 @@
 1. [msql](https://proglib.io/p/sql-questions)
 2. [задачи + теория](https://dou.ua/lenta/articles/sql-questions/)
 3. [презентация sql](https://ppt-online.org/146233)
+4. [postgres полезные функции](https://habr.com/ru/post/340460/)
+5. [sql оконные функции](https://habr.com/ru/post/268983/)
 
 ### Задача 1. Гребаные кошки
 
