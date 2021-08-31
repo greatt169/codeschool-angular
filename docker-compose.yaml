@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  postgres:
+    image: postgres:12.3
+    container_name: test_postgres
+    hostname: ${DB_HOST}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - ./.docker/data/db/pgdata:/pgdata
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - PGDATA=/pgdata
