@@ -12,3 +12,5 @@
 1. [ссылка](https://qvault.io/golang/top-golang-interview-questions/)
 1. [ссылка](https://www.educative.io/blog/50-golang-interview-questions)
 1. [ссылка](https://dave.cheney.net/2017/04/29/there-is-no-pass-by-reference-in-go)
+1. [ссылка-указатели](https://rtfm.co.ua/golang-ukazateli-podrobnyj-razbor/)
+1. [ссылка-указатели 2](https://golangify.com/pointers)
