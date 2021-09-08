@@ -37,7 +37,8 @@ func main() {
 	for {
 		v, ok := <-c
 		if ok == false {
-			fmt.Println(with200)
+			fmt.Prin
+			tln(with200)
 			fmt.Println(withNot200)
 			fmt.Println(withErr)
 			return
