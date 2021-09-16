@@ -29,19 +29,10 @@ func main() {
 		wg.Add(1)
 		go checkResponse(url, &wg, c)
 	}
-	go func() {
-		wg.Wait()
-		close(c)
-	}()
+	wg.Wait()
+	close(c)
 
-	for {
-		v, ok := <-c
-		if ok == false {
-			fmt.Println(with200)
-			fmt.Println(withNot200)
-			fmt.Println(withErr)
-			return
-		}
+	for v := range c {
 		switch v {
 		case http.StatusOK:
 			with200++
@@ -50,7 +41,8 @@ func main() {
 		default:
 			withNot200++
 		}
-
 	}
-
+	fmt.Println(with200)
+	fmt.Println(withNot200)
+	fmt.Println(withErr)
 }
