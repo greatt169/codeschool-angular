@@ -3,9 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	for i := 0; i < 5; i++ {
-		defer func(i *int) {
-			fmt.Printf("%v ", *i)
-		}(&i)
-	}
+	i := 1
+	defer func(i *int) {
+		fmt.Printf("%v ", *i)
+	}(&i)
+	i = 2
+	defer func(i *int) {
+		fmt.Printf("%v ", *i)
+	}(&i)
 }
